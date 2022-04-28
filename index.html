@@ -9,6 +9,14 @@
 			width: 504px;
 			height: 504px;
 			background-color: #03fcdb;
+			position: absolute;
+			left: 100px;
+			top: 350px;
+		}
+		.text{
+			width: 500px;
+			height: 300px;
+			margin-left: 80px;
 		}
 		.kletka{
 			width: 50px;
@@ -43,6 +51,13 @@
 	</style>
 </head>
 <body>
+	<div class="text">
+		<h1>Морской бой</h1>
+		<h2 style="color: purple;">1 фиолетовый крабль, 4 клетки</h2>
+		<h2 style="color: green;">2 зелёных корабля, 3 клетки</h2>
+		<h2 style="color: blue;">3 синих корабля, 2 клетки</h2>
+		<h2 style="color: yellow;">4 жёлтых корабля, 1 клетка</h2>
+	</div>
 	<div class="pole">
 		<div style="display: flex;">
 			<div class="enemy2"></div>
@@ -151,31 +166,52 @@
 		let enemy2 = document.querySelectorAll(".enemy2")
 		let enemy1 = document.querySelectorAll(".enemy1")
 		let kletka = document.querySelectorAll(".kletka")
+		let enemy14 = 4
+		let enemy26 = 6 
+		let enemy36 = 6
+		let enemy44 = 4
 		for (let i=0; i<4; i=i+1) {
 			enemy4[i].onclick = function(){
-				enemy4[i].style.backgroundColor = ("purple")
+				enemy4[i].style.backgroundColor = "purple" 
+				enemy44 = enemy44 - 1
+				if(enemy44 == 0&& enemy36 == 0&& enemy26 == 0&& enemy14 == 0){
+					alert("win")
+				}
 			}
 	    }	
 	    for (let i=0; i<6; i=i+1) {
 			enemy3[i].onclick = function(){
-				enemy3[i].style.backgroundColor = ("green")
+				enemy3[i].style.backgroundColor = "green"
+				enemy36 = enemy36 - 1
+				if(enemy44 == 0&& enemy36 == 0&& enemy26 == 0&& enemy14 == 0){
+					alert("win")
+				}
 			}
 	    }	
 	    for (let i=0; i<6; i=i+1) {
 			enemy2[i].onclick = function(){
-				enemy2[i].style.backgroundColor = ("blue")
+				enemy2[i].style.backgroundColor = "blue"
+				enemy26 = enemy26 - 1
+				if(enemy44 == 0&& enemy36 == 0&& enemy26 == 0&& enemy14 == 0){
+					alert("win")
+				}
 			}
 	    }	
 	    for (let i=0; i<4; i=i+1) {
 			enemy1[i].onclick = function(){
-				enemy1[i].style.backgroundColor = ("yellow")
+				enemy1[i].style.backgroundColor = "yellow"
+				enemy14 = enemy14 - 1
+				if(enemy44 == 0&& enemy36 == 0&& enemy26 == 0&& enemy14 == 0){
+					alert("win")
+				}
 			}
 	    }	
 	    for (let i=0; i<61; i=i+1) {
 			kletka[i].onclick = function(){
-				kletka[i].style.backgroundColor = ("red")
+				kletka[i].style.backgroundColor = "red"
 			}
 	    }	
+
 	</script>
 </body>
 </html>
